@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmatic opration</title>
+    <!-- <script src="./program.js"></script> -->
+</head>
+
+<body>
+    <script src="./program.js"></script>
+
+    <script>
+        //assignment 1 for  accsept user input.
+        n1 = prompt("Enter  the first Number");
+        console.log(n1);
+        n2 = prompt("Enter  the second number Number");
+        console.log(n2);
+        console.log("Addition", n1 + n2);
+        console.log("Substraction", n1 - n2);
+        console.log("Multiplication", n1 * n2);
+        console.log("Division", n1 / n2);
+        console.log("Modulus", n1 % n2);
+        // second assignment comparision oprators for  accsept user input.
+        a = prompt("Enter  the first Number");
+        console.log(n1);
+        b = prompt("Enter  the second number Number");
+        console.log(n2);
+        console.log("First no grater than second number", a > b);
+        console.log("First no less than second number", a < b);
+        console.log("First no and  second number is equal", a === b);
+        // Combine logical opraters.
+        math = prompt("Enter  Math score");
+        console.log(math);
+        sci = prompt("Enter science score");
+        console.log(sci);
+        if (math >= 92 && sci >= 88) {
+            console.log("Eligible")
+        } else {
+            console.log("not")
+        }
+
+        // shopping discount
+        totolammount = prompt("Enter  totol ammount");
+        console.log(totolammount);
+
+        if (totolammount >= 200) {
+            finalPrice = totolammount - totolammount * 10 / 100
+            console.log(finalPrice)
+        } else {
+            finalPrice = totolammount
+            console.log(finalPrice)
+        }
+
+        // mathsmatics opration 
+        length = prompt("Enter  length");
+        console.log(length);
+        width = prompt("Enter width");
+        console.log(width);
+        console.log("perimeter :-", 2 * (length + width))
+        console.log("Area", length * width)
+
+
+        //BMI calculator
+
+        let weight = parseFloat(prompt("Enter weight(kg):"));
+        let height = parseFloat(prompt("Enter height(m):"));
+
+        let bmi = weight / (height * height);
+        console.log("BMI:", bmi);
+        if (bmi < 18.5) {
+            console.log("Category : Underweight");
+        } else if (bmi >= 18.5 && bmi < 24.9) {
+            console.log("Category :  Normal weight");
+
+        }else if (bmi >= 25 && bmi < 29.9){
+            console.log("Category :   Overweight");
+        }else{
+            console.log("Category :  Obesity");
+
+        }
+
+        // Even or add number 
+        let num = parseFloat(prompt("Enter a Number :"));
+        if (num %2 ===0){
+            console.log("The Number is Even.")
+        }else{
+            console.log("The Number is Odd.");
+        }
+        //Complex Logical and Comparison Operation 
+        // citizen age
+        let age = parseFloat(prompt("Enter age :"));
+        let isCitizen =prompt("Are you a citizen(true/false)?")=== true;
+        
+        let canVote =(age >=18)&& isCitizen;
+        console.log("Eligible to vote:",canVote);
+
+
+        //Assignment Operators
+        let x =10;
+        console.log(" Initial value of x :",x);
+        x +=5;
+        console.log("After adding 5 :",x);
+        x*=3;
+        console.log("After multiplying by 3:",x);
+        x-=10;
+        console.log("After Subtracting 10:",x);
+        x /=2;
+        console.log("After dividing by 2:",x);
+        x %=3;
+        console.log("Modulus with 3:",x);
+        
+
+
+
+    </script>
+
+</body>
+
+</html>
