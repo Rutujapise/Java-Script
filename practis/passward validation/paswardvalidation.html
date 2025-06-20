@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passward validation </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container " style="background-color: rgb(218, 238, 231);">
+        <h1>Pasword Validation</h1>
+
+        <label for="password">Enter Password:</label><br>
+        <input type="text" placeholder="Password" id="password" class="w-50 text-center">
+        <br>
+        <button class="btn btn-outline-primary m-4" style="align-items: center;"
+            onclick="validatpassward()">Submit</button>
+        <br>
+        <div class="container">
+            <p id="result" class="text-center p-4  w-50" style="height:70px; background-color: antiquewhite;"></p>
+        </div>
+    </div>
+
+    <script>
+        function validatpassward() {
+            const Passward = document.querySelector("#password").value
+            const result = document.querySelector("#result")
+
+            const capitalAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const digits = "0123456789";
+
+            let hasCapital = false;
+            let hasDigit = false;
+
+            // Check each character
+            for (let i = 0; i < password.length; i++) {
+                if (capitalAlphabets.includes(password[i])) {
+                    hasCapital = true;
+                }
+                if (digits.includes(password[i])) {
+                    hasDigit = true;
+                }
+            }
+            if (password.length <= 6) {
+                result.textContent = " Password is too short"
+
+            } else if (!hasCapital) {
+                result.textContent = "password is must be one capital latter"
+            } else if (!hasDigit) {
+                result.textContent = "number is not allowed"
+            } else {
+                result.textContent = "password is valid "
+                result.style.color = "green";
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
