@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Checker & Multiplication Table</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light p-4">
+
+  <div class="container">
+    <h2 class="mb-4 text-primary">Exercise 1: Number Checker</h2>
+    <div class="mb-3">
+      <input type="number" id="numberInput" class="form-control" placeholder="Enter a number">
+    </div>
+    <button onclick="checkNumber()" class="btn btn-success mb-3">Check Number</button>
+    <div id="numberResult" class="alert alert-info d-none"></div>
+
+    <hr>
+
+    <h2 class="mb-4 text-primary">Exercise 2: Multiplication Table</h2>
+    <div class="mb-3">
+      <input type="number" id="tableInput" class="form-control" placeholder="Enter a number">
+    </div>
+    <button onclick="generateTable()" class="btn btn-warning mb-3">Generate Table</button>
+    <ul id="tableResult" class="list-group"></ul>
+ 
+
+  <hr>
+
+  <div class="container">
+    <h2 class="mb-4 text-primary">Exercise 3: Number Guessing Game</h2>
+
+    <div class="mb-3">
+      <input type="number" id="guessInput" class="form-control" placeholder="Guess a number between 1 and 10">
+    </div>
+    <button onclick="checkGuess()" class="btn btn-primary">Submit Guess</button>
+    <button onclick="resetGame()" class="btn btn-secondary ms-2">Reset</button>
+
+    <div id="guessMessage" class="alert mt-3 d-none"></div>
+  </div>
+  <br>
+  <br>
+  <hr>
+
+  <div class="container">
+
+  <!-- Exercise 4 -->
+  <h3 class="text-primary">Exercise 4: Print Even Numbers (1 to 20)</h3>
+  <button onclick="printEvenNumbers()" class="btn btn-success mb-3">Show Even Numbers</button>
+  <div id="evenResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 5 -->
+  <h3 class="text-primary">Exercise 5: Sum of Digits</h3>
+  <div class="mb-3">
+    <input type="number" id="digitInput" class="form-control" placeholder="Enter a number">
+  </div>
+  <button onclick="sumOfDigits()" class="btn btn-warning mb-3">Calculate Sum</button>
+  <div id="sumResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 6 -->
+  <h3 class="text-primary">Exercise 6: FizzBuzz (1 to 50)</h3>
+  <button onclick="runFizzBuzz()" class="btn btn-primary mb-3">Run FizzBuzz</button>
+  <div id="fizzBuzzResult" class="alert alert-secondary d-none"></div>
+
+</div>
+<br>
+<br><hr>
+<div class="container">
+
+<!-- Exercise 7: Prime Number Checker -->
+  <h3 class="text-primary">Exercise 7: Prime Number Checker</h3>
+  <div class="mb-3">
+    <input type="number" id="primeInput" class="form-control" placeholder="Enter a number">
+  </div>
+  <button onclick="checkPrime()" class="btn btn-success mb-3">Check Prime</button>
+  <div id="primeResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 8: Star Pattern -->
+  <h3 class="text-primary">Exercise 8: Star Pattern</h3>
+  <div class="mb-3">
+    <input type="number" id="starInput" class="form-control" placeholder="Enter number of lines">
+  </div>
+  <button onclick="printStarPattern()" class="btn btn-warning mb-3">Show Pattern</button>
+  <pre id="starResult" class="bg-dark text-light p-3 rounded d-none"></pre>
+
+  <hr>
+
+  <!-- Exercise 9: Largest of Three Numbers -->
+  <h3 class="text-primary">Exercise 9: Find Largest of Three Numbers</h3>
+  <div class="mb-3">
+    <input type="number" id="num1" class="form-control mb-2" placeholder="Enter first number">
+    <input type="number" id="num2" class="form-control mb-2" placeholder="Enter second number">
+    <input type="number" id="num3" class="form-control" placeholder="Enter third number">
+  </div>
+  <button onclick="findLargest()" class="btn btn-primary mb-3">Find Largest</button>
+  <div id="largestResult" class="alert alert-info d-none"></div>
+
+</div>
+<hr>
+<div class="container">
+
+  <!-- Exercise 10: Palindrome Checker -->
+  <h3 class="text-primary">Exercise 10: Palindrome Checker</h3>
+  <div class="mb-3">
+    <input type="text" id="palindromeInput" class="form-control" placeholder="Enter a string">
+  </div>
+  <button onclick="checkPalindrome()" class="btn btn-success mb-3">Check Palindrome</button>
+  <div id="palindromeResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 11: Count Vowels and Consonants -->
+  <h3 class="text-primary">Exercise 11: Count Vowels and Consonants</h3>
+  <div class="mb-3">
+    <input type="text" id="vcInput" class="form-control" placeholder="Enter a string">
+  </div>
+  <button onclick="countVowelsConsonants()" class="btn btn-warning mb-3">Count</button>
+  <div id="vcResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 12: Reverse a Number -->
+  <h3 class="text-primary">Exercise 12: Reverse a Number</h3>
+  <div class="mb-3">
+    <input type="number" id="reverseInput" class="form-control" placeholder="Enter a number">
+  </div>
+  <button onclick="reverseNumber()" class="btn btn-primary mb-3">Reverse</button>
+  <div id="reverseResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 13: Sum of Odd and Even Numbers -->
+  <h3 class="text-primary">Exercise 13: Sum of Odd and Even Numbers (1 to 100)</h3>
+  <button onclick="sumOddEven()" class="btn btn-secondary mb-3">Calculate</button>
+  <div id="oddEvenResult" class="alert alert-info d-none"></div>
+  <hr>
+
+
+ <!-- Exercise 14: Factorial Using While Loop -->
+  <h3 class="text-primary">Exercise 14: Factorial Using While Loop</h3>
+  <div class="mb-3">
+    <input type="number" id="factInput" class="form-control" placeholder="Enter a number">
+  </div>
+  <button onclick="calculateFactorial()" class="btn btn-success mb-3">Calculate Factorial</button>
+  <div id="factResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 15: Average of N Numbers -->
+  <h3 class="text-primary">Exercise 15: Average of N Numbers</h3>
+  <div class="mb-2">
+    <input type="number" id="countInput" class="form-control" placeholder="How many numbers?">
+  </div>
+  <div class="mb-2">
+    <input type="text" id="numbersInput" class="form-control" placeholder="Enter the numbers separated by commas (e.g. 10,20,30)">
+  </div>
+  <button onclick="calculateAverage()" class="btn btn-warning mb-3">Calculate Average</button>
+  <div id="avgResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 16: Leap Year Checker -->
+  <h3 class="text-primary">Exercise 16: Leap Year Checker</h3>
+  <div class="mb-3">
+    <input type="number" id="yearInput" class="form-control" placeholder="Enter a year">
+  </div>
+  <button onclick="checkLeapYear()" class="btn btn-primary mb-3">Check Leap Year</button>
+  <div id="leapResult" class="alert alert-info d-none"></div>
+
+</div>
+<hr>
+<div class="container">
+    <h3 class="text-primary">Exercise 17: Find Divisors of a Number</h3>
+
+    <div class="mb-3">
+      <input type="number" id="divisorInput" class="form-control" placeholder="Enter a number">
+    </div>
+    <button onclick="findDivisors()" class="btn btn-success mb-3">Find Divisors</button>
+    <div id="divisorResult" class="alert alert-info d-none"></div>
+  </div>
+  <hr>
+
+  <div class="container">
+
+  <!-- Exercise 18: Fibonacci Sequence -->
+  <h3 class="text-primary">Exercise 18: Fibonacci Sequence</h3>
+  <div class="mb-3">
+    <input type="number" id="fiboInput" class="form-control" placeholder="How many terms?">
+  </div>
+  <button onclick="generateFibonacci()" class="btn btn-success mb-3">Generate</button>
+  <div id="fiboResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 19: Armstrong Number Checker -->
+  <h3 class="text-primary">Exercise 19: Armstrong Number Checker</h3>
+  <div class="mb-3">
+    <input type="number" id="armInput" class="form-control" placeholder="Enter a number">
+  </div>
+  <button onclick="checkArmstrong()" class="btn btn-warning mb-3">Check</button>
+  <div id="armResult" class="alert alert-info d-none"></div>
+
+  <hr>
+
+  <!-- Exercise 20: Number Pyramid -->
+  <h3 class="text-primary">Exercise 20: Number Pyramid</h3>
+  <div class="mb-3">
+    <input type="number" id="pyramidInput" class="form-control" placeholder="Enter number of rows">
+  </div>
+  <button onclick="generatePyramid()" class="btn btn-primary mb-3">Generate Pattern</button>
+  <pre id="pyramidResult" class="bg-dark text-light p-3 rounded d-none"></pre>
+
+</div>
+ </div>
+
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
