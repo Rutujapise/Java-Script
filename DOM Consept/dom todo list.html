@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit_List</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 50px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: rgb(193, 187, 187);
+            color: rgb(204, 9, 207);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .todo-input {
+            padding: 10px;
+            width: 90%;
+        }
+        .add-btn {
+            padding: 10px 20px;
+        }
+        .deleteFruit {
+            padding: 5px 10px;
+            background-color: oklab(57.57600000000001% 0.11116 -0.133);
+            color: rgb(245, 244, 250);
+            border: none;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TO DO LIST</h1>
+    <input type="text" id="fruit_input" class="todo-input" placeholder="Add a new fruit">
+    <button id="add_fruit" class="add-btn">Add Fruit</button>
+    <ul id="fruit_list"></ul>
+
+    <script>
+        const fruit_input = document.querySelector("#fruit_input");
+        const add_fruit = document.querySelector("#add_fruit");
+        const fruit_list = document.querySelector("#fruit_list");
+
+        add_fruit.addEventListener('click', () => {
+            const newFruit = fruit_input.value;
+
+            if (newFruit === "") return;
+
+            const newFruitElmt = document.createElement('li');
+            newFruitElmt.innerHTML = `
+                ${newFruit}
+                <button class='deleteFruit'>Delete</button>
+            `;
+
+            fruit_list.appendChild(newFruitElmt);
+            fruit_input.value = '';
+
+            newFruitElmt.querySelector('.deleteFruit').addEventListener('click', () => {
+                fruit_list.removeChild(newFruitElmt);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+</head>
+<style>
+    body{
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        margin: 50px;
+        
+    }
+    ul{
+        list-style-type: none;
+        padding: 0%;
+    }
+    li{
+        padding: 10px;
+        margin: 5px 0;
+        background-color: rgb(60, 60, 60);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .todo-input{
+        padding: 10px;
+        width: 50%;
+    }
+    .add-btn{
+        padding: 10px 20px;
+    }
+</style>
+<body>
+    
+<h1>TO DO LIST</h1>
+<input type="text" id="fruit_input" class="todo-input"  placeholder="Add  a new friut"  >
+<button id="add_fruit" class="add-btn" >Add Fruit</button>
+<ul id="fruit_list" ></ul>
+<script>
+    const fruit_input =document.querySelector("#fruit_input");
+    const add_fruit = document.querySelector("#add_fruit");
+    const fruit_list = document.querySelector("#fruit_list")
+
+add-btn.addEventListener('click', ()=>{
+    newFruit = fruit_input.value
+ const newFruitElmt=document.createElement('li')
+ console.log(newFruit,newFruitElmt)
+ newFruitContent = document.createTextNode(newFruit)
+ console.log(newFruitContent,"newFruitContent")
+})
+newFruitElmt.innerHTML = `${newFruit}
+                           <button class ='deleteFruit'>Delete</button>
+                           `
+fruit_list.appendChild(newFruitElmt)
+fruit_input.value='';
+newFruitElmt.querySelector('.deleteFruit').addEventListener('click',()=>{
+    console.log(newFruitElmt)
+    fruit_list.removeChild(newFruitElmt);
+})
+
+function deletefruitelement(){
+    console.log(newFruitElmt)
+}
+</script>
+</body>
+</html>
+ -->
